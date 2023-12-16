@@ -5,6 +5,10 @@ const {
 const app = express()
 const port = 3000
 
+app.get('/h', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.use('/', createProxyMiddleware({
   target: 'https://api.openai.com',
   changeOrigin: true,
